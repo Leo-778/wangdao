@@ -2,7 +2,7 @@
  * @Descripttion: 找到两个等长的升序序列A,B的中位数(指两个序列的升序序列中间那个数)
  * @Author: Leo
  * @Date: 2021-08-14 21:29:28
- * @LastEditTime: 2021-08-14 21:43:40
+ * @LastEditTime: 2021-08-15 20:09:10
  */
 #include<stdio.h>
 #include<stdlib.h>
@@ -48,8 +48,8 @@ int search_mid(int *a,int *b,int n){
 }
 int main(int argc, char const *argv[])
 {
-    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int b[10] = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 51};
+    int b[10] = {1, 11, 12, 13, 14, 15, 16, 17, 18, 19};
     printf("%d\n", search_mid(a, b, 10));
     return 0;
 }
