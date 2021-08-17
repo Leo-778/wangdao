@@ -1,10 +1,9 @@
 /*
- * @Descripttion: 将两个单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 带头结点单链表,排序,递增
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-17 21:32:35
+ * @Date: 2021-08-17 20:02:27
+ * @LastEditTime: 2021-08-17 20:18:52
  */
-
 #include<stdio.h>
 #include<stdlib.h>
 //建立单链表(头插法，尾插法)
@@ -35,9 +34,9 @@ void display(LinkList p) {
     printf("\n");
 }
 
-int a[maxsize] = {9, 8, 8, 6, 6, 3, 3, 1, 1, 0};
+int a[maxsize] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 //尾插法
-void list_tailInsert(LinkList &l){
+LinkList list_tailInsert(LinkList &l){
     int x;
     l = (LinkList)malloc(sizeof(LNode));
     LinkList s, r = l;
@@ -51,18 +50,37 @@ void list_tailInsert(LinkList &l){
     }
     
     r->next = NULL;
-    return ;
+    return l;
 }
 
-void del_same(LinkList &a){
-    
+void sort(LinkList &l){
+    LinkList p = l->next, pre;
+    LinkList r = p->next;
+    p->next = nullptr;
+    p = r;
+    while (p)
+    {
+        r = p->next;
+        pre = l;
+        while (pre->next!=nullptr &&pre->next->data<p->data)
+        {
+            pre = pre->next;
+        }
+        p->next = pre->next;
+        pre->next = p;
+        p = r;
+    }
+    return;
 }
 
 int main(int argc, char const *argv[])
 {
-    LinkList a;
-    InitList(a);
-    list_tailInsert(a);
-    display(a);
+    LinkList l;
+    InitList(l);
+    l = list_tailInsert(l);
+    display(l);
+
+    sort(l);
+    display(l);
     return 0;
 }

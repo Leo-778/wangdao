@@ -1,8 +1,8 @@
 /*
- * @Descripttion: 将两个单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 删除单链表所有结点中，值最小的结点。
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-17 21:32:35
+ * @Date: 2021-08-16 20:59:10
+ * @LastEditTime: 2021-08-16 21:13:01
  */
 
 #include<stdio.h>
@@ -35,9 +35,9 @@ void display(LinkList p) {
     printf("\n");
 }
 
-int a[maxsize] = {9, 8, 8, 6, 6, 3, 3, 1, 1, 0};
+int a[maxsize] = {8, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 //尾插法
-void list_tailInsert(LinkList &l){
+LinkList list_tailInsert(LinkList &l){
     int x;
     l = (LinkList)malloc(sizeof(LNode));
     LinkList s, r = l;
@@ -51,18 +51,35 @@ void list_tailInsert(LinkList &l){
     }
     
     r->next = NULL;
-    return ;
+    return l;
 }
 
-void del_same(LinkList &a){
-    
+void del_min(LinkList &l){
+    LinkList p = l->next, pre = l;
+    LinkList minp = l->next, minpre = l;
+    while (p)
+    {
+        if (p->data<minp->data)
+        {
+            minp = p;
+            minpre = pre;
+        }
+        pre = p;
+        p = p->next;
+    }
+    minpre->next = minp->next;
+    free(minp);
+    return;
 }
 
 int main(int argc, char const *argv[])
 {
-    LinkList a;
-    InitList(a);
-    list_tailInsert(a);
-    display(a);
+    LinkList l;
+    InitList(l);
+    l = list_tailInsert(l);
+    display(l);
+
+    del_min(l);
+    display(l);
     return 0;
 }

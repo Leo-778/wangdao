@@ -1,8 +1,8 @@
 /*
- * @Descripttion: 将两个单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 单链表从未到头反向输出所有结点的值。
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-17 21:32:35
+ * @Date: 2021-08-16 20:44:22
+ * @LastEditTime: 2021-08-16 20:58:45
  */
 
 #include<stdio.h>
@@ -24,20 +24,9 @@ bool InitList(LinkList &l){
     l->next = NULL;    //头结点之后暂时还没有节点
     return true;
 }
-
-void display(LinkList p) {
-    LinkList temp = p;//将temp指针重新指向头结点
-    //只要temp指针指向的结点的next不是Null，就执行输出语句。
-    while (temp->next) {
-        temp = temp->next;
-        printf("%d ", temp->data);
-    }
-    printf("\n");
-}
-
-int a[maxsize] = {9, 8, 8, 6, 6, 3, 3, 1, 1, 0};
+int a[maxsize] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 //尾插法
-void list_tailInsert(LinkList &l){
+LinkList list_tailInsert(LinkList &l){
     int x;
     l = (LinkList)malloc(sizeof(LNode));
     LinkList s, r = l;
@@ -51,18 +40,41 @@ void list_tailInsert(LinkList &l){
     }
     
     r->next = NULL;
-    return ;
+    return l;
 }
 
-void del_same(LinkList &a){
-    
+void display(LinkList p) {
+    LinkList temp = p;//将temp指针重新指向头结点
+    //只要temp指针指向的结点的next不是Null，就执行输出语句。
+    while (temp->next) {
+        temp = temp->next;
+        printf("%d ", temp->data);
+    }
+    printf("\n");
+}
+
+void output(LinkList &l){
+    LinkList p;
+    InitList(p);
+    LinkList t = l->next,s;
+    while (t!=nullptr)
+    {
+        s = (LinkList)malloc(sizeof(LNode));
+        s->data = t->data;
+        s->next = p->next;
+        p->next = s;
+        t = t->next;
+    }
+    display(p);
+    return;
 }
 
 int main(int argc, char const *argv[])
 {
-    LinkList a;
-    InitList(a);
-    list_tailInsert(a);
-    display(a);
+    LinkList l;
+    InitList(l);
+    l = list_tailInsert(l);
+    display(l);
+    output(l);
     return 0;
 }

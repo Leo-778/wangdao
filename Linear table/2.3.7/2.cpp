@@ -1,9 +1,10 @@
 /*
- * @Descripttion: 删除不带头结点的单链表l中所有值为x的元素(递归实现)
+ * @Descripttion: 带头节点的单链表删除所有值为x的元素
  * @Author: Leo
- * @Date: 2021-08-15 21:11:35
- * @LastEditTime: 2021-08-16 20:44:17
+ * @Date: 2021-08-16 20:38:28
+ * @LastEditTime: 2021-08-16 20:40:23
  */
+
 #include<stdio.h>
 #include<stdlib.h>
 //建立单链表(头插法，尾插法)
@@ -50,20 +51,23 @@ void display(LinkList p) {
     printf("\n");
 }
 
-void del_x(LinkList &l,int x){
-    LinkList p;
-    if (l==nullptr)
-        return;
-    if (l->data==x)
+bool del_x(LinkList &l,int x){
+    LinkList p,s;
+    p = l;
+    while (p->next!=nullptr)
     {
-        p = l;
-        l = l->next;
-        free(p);
-        del_x(l, x);
+        if (p->next->data==x)
+        {
+            s=p->next;
+            p->next = p->next->next;
+            free(s);
+        }
+        if (p->next->data!=x)
+        {
+            p = p->next;
+        }
     }
-    else{
-        del_x(l->next, x);
-    }
+    return true;
 }
 
 int main(int argc, char const *argv[])

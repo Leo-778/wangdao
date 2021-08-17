@@ -1,10 +1,9 @@
 /*
- * @Descripttion: 将两个单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 去除单链表中重复元素{7,7,8,8}->{7,8}
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-17 21:32:35
+ * @Date: 2021-08-17 21:15:04
+ * @LastEditTime: 2021-08-17 21:31:40
  */
-
 #include<stdio.h>
 #include<stdlib.h>
 //建立单链表(头插法，尾插法)
@@ -55,7 +54,23 @@ void list_tailInsert(LinkList &l){
 }
 
 void del_same(LinkList &a){
-    
+    LinkList p = a->next, q;
+    if(p==nullptr)
+        return;
+    while (p->next)
+    {
+        q = p->next;
+        if (p->data==q->data)
+        {
+            p->next = q->next;
+            free(q);
+        }
+        else
+        {
+            p = p->next;
+        }
+    }
+    return;
 }
 
 int main(int argc, char const *argv[])
@@ -63,6 +78,8 @@ int main(int argc, char const *argv[])
     LinkList a;
     InitList(a);
     list_tailInsert(a);
+    display(a);
+    del_same(a);
     display(a);
     return 0;
 }

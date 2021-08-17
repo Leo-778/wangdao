@@ -1,8 +1,8 @@
 /*
- * @Descripttion: 将两个单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 无序的单链表，删除给定[a,b]之间的值
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-17 21:32:35
+ * @Date: 2021-08-17 20:17:30
+ * @LastEditTime: 2021-08-17 20:26:49
  */
 
 #include<stdio.h>
@@ -35,15 +35,15 @@ void display(LinkList p) {
     printf("\n");
 }
 
-int a[maxsize] = {9, 8, 8, 6, 6, 3, 3, 1, 1, 0};
+int ax[maxsize] = {8, 7, 9, 5, 4, 3, 2, 1, 0, 6};
 //尾插法
-void list_tailInsert(LinkList &l){
+LinkList list_tailInsert(LinkList &l){
     int x;
     l = (LinkList)malloc(sizeof(LNode));
     LinkList s, r = l;
     for (int i = 0; i < maxsize; i++)
     {
-        x = a[i];
+        x = ax[i];
         s = (LinkList)malloc(sizeof(LNode));
         s->data = x;
         r->next = s;
@@ -51,18 +51,34 @@ void list_tailInsert(LinkList &l){
     }
     
     r->next = NULL;
-    return ;
+    return l;
 }
 
-void del_same(LinkList &a){
+void del_a_to_b(LinkList &l,int a,int b){
+    LinkList pre = l, p = pre->next;
+    while (p)
+    {
+        if (p->data>=a&&p->data<=b)
+        {
+            pre->next = p->next;
+            p = pre->next;
+        }
+        else{
+            p = p->next;
+            pre = pre->next;
+        }
+    }
     
 }
 
 int main(int argc, char const *argv[])
 {
-    LinkList a;
-    InitList(a);
-    list_tailInsert(a);
-    display(a);
+    LinkList l;
+    InitList(l);
+    l = list_tailInsert(l);
+    display(l);
+
+    del_a_to_b(l, 5, 8);
+    display(l);
     return 0;
 }

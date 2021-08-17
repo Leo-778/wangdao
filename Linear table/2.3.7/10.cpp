@@ -1,8 +1,8 @@
 /*
- * @Descripttion: 将两个单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 拆分单链表，一个序号为奇数，一个序号为偶数，顺序不变
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-17 21:32:35
+ * @Date: 2021-08-17 20:55:07
+ * @LastEditTime: 2021-08-17 21:03:22
  */
 
 #include<stdio.h>
@@ -35,7 +35,7 @@ void display(LinkList p) {
     printf("\n");
 }
 
-int a[maxsize] = {9, 8, 8, 6, 6, 3, 3, 1, 1, 0};
+int a[maxsize] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 //尾插法
 void list_tailInsert(LinkList &l){
     int x;
@@ -54,15 +54,41 @@ void list_tailInsert(LinkList &l){
     return ;
 }
 
-void del_same(LinkList &a){
-    
+LinkList discreat(LinkList &a){
+    int i = 0;
+    LinkList b = (LinkList)malloc(sizeof(LNode));
+    b->next = nullptr;
+    LinkList ra=a, rb=b;
+    LinkList p = a->next;
+    a->next = nullptr;
+    while (p)
+    {
+        i++;
+        if (i%2==0)
+        {
+            rb->next = p;
+            rb = p;
+        }
+        else
+        {
+            ra->next = p;
+            ra = p;
+        }
+        p = p->next;
+    }
+    ra->next = nullptr;
+    rb->next = nullptr;
+    return b;
 }
 
 int main(int argc, char const *argv[])
 {
-    LinkList a;
+    LinkList a,b;
     InitList(a);
     list_tailInsert(a);
     display(a);
+    b = discreat(a);
+    display(a);
+    display(b);
     return 0;
 }

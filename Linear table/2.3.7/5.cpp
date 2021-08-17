@@ -1,8 +1,8 @@
 /*
- * @Descripttion: 将两个单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 将单链表就地逆置（空间复杂度为O(1)）
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-17 21:32:35
+ * @Date: 2021-08-16 21:13:13
+ * @LastEditTime: 2021-08-17 20:01:58
  */
 
 #include<stdio.h>
@@ -35,9 +35,9 @@ void display(LinkList p) {
     printf("\n");
 }
 
-int a[maxsize] = {9, 8, 8, 6, 6, 3, 3, 1, 1, 0};
+int a[maxsize] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 //尾插法
-void list_tailInsert(LinkList &l){
+LinkList list_tailInsert(LinkList &l){
     int x;
     l = (LinkList)malloc(sizeof(LNode));
     LinkList s, r = l;
@@ -51,18 +51,42 @@ void list_tailInsert(LinkList &l){
     }
     
     r->next = NULL;
-    return ;
+    return l;
 }
 
-void del_same(LinkList &a){
-    
+LinkList reserve(LinkList l){
+    if (l->next==nullptr)
+    {
+        return l;
+    }
+    LinkList pre = l->next, p = pre->next, r = p->next;
+    pre->next = nullptr;
+    if(r==nullptr){
+        p->next = pre;
+        return p;
+    }
+    while (r!=nullptr)
+    {
+        p->next = pre;
+        pre = p;
+        p = r->next;
+        r->next = pre;
+        pre = r;
+        r = p->next;
+    }
+    p->next = pre;
+    l->next = p;
+    return l;
 }
 
 int main(int argc, char const *argv[])
 {
-    LinkList a;
-    InitList(a);
-    list_tailInsert(a);
-    display(a);
+    LinkList l;
+    InitList(l);
+    l = list_tailInsert(l);
+    display(l);
+
+    l = reserve(l);
+    display(l);
     return 0;
 }
