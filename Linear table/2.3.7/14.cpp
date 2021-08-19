@@ -1,10 +1,9 @@
 /*
- * @Descripttion: 将两个递增单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 从递增的单链表A,B中，找公共元素，放在单链表c中,不破坏原结点
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-18 20:57:07
+ * @Date: 2021-08-18 20:57:46
+ * @LastEditTime: 2021-08-18 21:16:55
  */
-
 #include<stdio.h>
 #include<stdlib.h>
 //建立单链表(头插法，尾插法)
@@ -53,58 +52,48 @@ void list_tailInsert(LinkList &l,int *a,int n){
     r->next = NULL;
     return ;
 }
-bool ListMerge(LinkList &A,LinkList &B)
-{
-    LinkList p,q,t;
-    p=A->next;
-    q=B->next;
-    A->next=NULL;
-    delete B;
-    while(p&&q)
-    {
-        if(p->data<=q->data)
-        {
-            t=p;
-            p=p->next;
-            t->next=A->next;
-            A->next=t;                      
+
+void get_same(LinkList A,LinkList B,LinkList &C){
+    C->next =NULL;  //确认c为空链表；
+    LNode *r;
+    r = C; //初始化指针；
+    
+    if(A->next == NULL || B->next == NULL) return ;  //如果A或者B中存在空表；
+    LNode *p = A->next;
+    LNode *q = B->next;
+    LinkList s;
+
+    while(p!=NULL && q!= NULL){
+        if(p->data > q->data){ //值比较小，则指针右移一位；
+            q =q->next;
+        }else if(p->data < q->data){
+            p = p->next;
+        }else{ //值相等；
+            s=(LNode *)malloc(sizeof(LNode));  //创建*S结点；
+            s->data = p->data;  //*S结点赋值；
+            r->next = s;
+            r = s;
+
+            //A、B链表中剩余的元素继续比较；
+            p = p->next;
+            q = q->next;
         }
-        else
-        {
-            t=q;
-            q=q->next;
-            t->next=A->next;
-            A->next=t;          
-        }  
     }
-    while(p)
-    {
-        t=p;
-        p=p->next;
-        t->next=A->next;
-        A->next=t;
-    }
-    while(q)
-    {
-        t=q;
-        q=q->next;
-        t->next=A->next;
-        A->next=t;
-    }
-    return true;
+    r->next = NULL;
 }
 
 
 int main(int argc, char const *argv[])
 {
-    LinkList A,B;
+    LinkList A,B,C;
     InitList(A);
     InitList(B);
-    int a[4]={1,2,2,3};
+    InitList(C);
+    int a[4]={1,2,3,7};
     int b[6]={2,3,4,5,6,7};
-    list_tailInsert(A,a,4);
+    list_tailInsert(A, a, 4);
     list_tailInsert(B, b, 6);
-    ListMerge(A, B);
-    display(A);
+    get_same(A, B, C);
+    display(C);
     return 0;
 }

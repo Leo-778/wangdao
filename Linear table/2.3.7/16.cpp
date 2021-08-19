@@ -1,10 +1,9 @@
 /*
- * @Descripttion: 将两个递增单链表归并为一个递减的单链表，并用原来的节点保存
+ * @Descripttion: 判断单链表B是否是A的连续子序列
  * @Author: Leo
- * @Date: 2021-08-17 21:30:10
- * @LastEditTime: 2021-08-18 20:57:07
+ * @Date: 2021-08-18 21:20:54
+ * @LastEditTime: 2021-08-18 21:29:51
  */
-
 #include<stdio.h>
 #include<stdlib.h>
 //建立单链表(头插法，尾插法)
@@ -53,45 +52,25 @@ void list_tailInsert(LinkList &l,int *a,int n){
     r->next = NULL;
     return ;
 }
-bool ListMerge(LinkList &A,LinkList &B)
-{
-    LinkList p,q,t;
-    p=A->next;
-    q=B->next;
-    A->next=NULL;
-    delete B;
-    while(p&&q)
+
+bool pattern(LinkList &A,LinkList &B){
+    LNode *p,*q;
+    p = A->next;
+    q = B->next;
+    while (p)
     {
-        if(p->data<=q->data)
-        {
-            t=p;
-            p=p->next;
-            t->next=A->next;
-            A->next=t;                      
+        if (p->data != q->data) {
+            p =p->next;
+            q = B->next;
         }
-        else
-        {
-            t=q;
-            q=q->next;
-            t->next=A->next;
-            A->next=t;          
-        }  
+        else {
+            p = p->next;
+            q = q->next;
+            if (q==NULL)
+                return true;
+        }
     }
-    while(p)
-    {
-        t=p;
-        p=p->next;
-        t->next=A->next;
-        A->next=t;
-    }
-    while(q)
-    {
-        t=q;
-        q=q->next;
-        t->next=A->next;
-        A->next=t;
-    }
-    return true;
+    return false;   
 }
 
 
@@ -100,11 +79,12 @@ int main(int argc, char const *argv[])
     LinkList A,B;
     InitList(A);
     InitList(B);
-    int a[4]={1,2,2,3};
-    int b[6]={2,3,4,5,6,7};
-    list_tailInsert(A,a,4);
-    list_tailInsert(B, b, 6);
-    ListMerge(A, B);
+    int a[6]={2,3,4,5,6,7};
+    int b[3]={2,3,4};
+    list_tailInsert(A, a, 6);
+    list_tailInsert(B, b, 3);
     display(A);
+    display(B);
+    printf("%d\n",pattern(A,B));
     return 0;
 }
