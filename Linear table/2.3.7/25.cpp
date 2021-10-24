@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 单链表L={a1,a2,a3,a4,...,an},重排使之为L={a1,an,a2,an-1,a3,an-2}
+ * @Description: 单链表L={a1,a2,a3,a4,...,an},重排使之为L={a1,an,a2,an-1,a3,an-2}
  * @Author: Leo
  * @Date: 2021-08-19 19:08:15
  * @LastEditTime: 2021-08-19 19:19:44

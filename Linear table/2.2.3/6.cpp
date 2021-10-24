@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 有序表中删除所有重复的元素。
+ * @Description: 有序表中删除所有重复的元素。
  * @Author: Leo
  * @Date: 2021-08-13 21:40:41
  * @LastEditTime: 2021-08-14 20:07:26

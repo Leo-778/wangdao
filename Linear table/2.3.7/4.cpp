@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 删除单链表所有结点中，值最小的结点。
+ * @Description: 删除单链表所有结点中，值最小的结点。
  * @Author: Leo
  * @Date: 2021-08-16 20:59:10
  * @LastEditTime: 2021-08-16 21:13:01

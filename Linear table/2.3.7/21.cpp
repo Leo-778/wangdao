@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 查找链表倒数第k个位置上的元素
+ * @Description: 查找链表倒数第k个位置上的元素
  * @Author: Leo
  * @Date: 2021-08-19 18:47:11
  * @LastEditTime: 2021-08-19 18:53:36

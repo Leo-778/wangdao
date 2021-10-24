@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 无序的单链表，删除给定[a,b]之间的值
+ * @Description: 无序的单链表，删除给定[a,b]之间的值
  * @Author: Leo
  * @Date: 2021-08-17 20:17:30
  * @LastEditTime: 2021-08-17 20:26:49

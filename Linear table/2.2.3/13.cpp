@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 找出数组中没有出现的最小正整数
+ * @Description: 找出数组中没有出现的最小正整数
  * @Author: Leo
  * @Date: 2021-08-15 20:31:36
  * @LastEditTime: 2021-08-15 20:37:47

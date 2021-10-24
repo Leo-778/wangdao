@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 将线性表C={a1,b1,a2,b2,...,an,bn}拆分为a={a1,a2,...,an},b={bn,...,b2,b1}
+ * @Description: 将线性表C={a1,b1,a2,b2,...,an,bn}拆分为a={a1,a2,...,an},b={bn,...,b2,b1}
  * @Author: Leo
  * @Date: 2021-08-17 21:03:32
  * @LastEditTime: 2021-08-17 21:14:47

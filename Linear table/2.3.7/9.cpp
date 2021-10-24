@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 给定单链表，递增输出，并释放空间。
+ * @Description: 给定单链表，递增输出，并释放空间。
  * @Author: Leo
  * @Date: 2021-08-17 20:49:41
  * @LastEditTime: 2021-08-17 20:55:02

@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 递增的单链表A,B;求交集,放在A中
+ * @Description: 递增的单链表A,B;求交集,放在A中
  * @Author: Leo
  * @Date: 2021-08-18 21:13:13
  * @LastEditTime: 2021-08-18 21:19:13

@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 栈模拟队列
+ * @Description: 栈模拟队列
  * @Author: Leo
  * @Date: 2021-08-21 21:05:21
  * @LastEditTime: 2021-08-21 21:31:45

@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 非递归求树高：
+ * @Description: 非递归求树高：
  * @Author: Leo
  * @Date: 2021-08-30 20:50:36
  * @LastEditTime: 2021-08-30 21:11:51

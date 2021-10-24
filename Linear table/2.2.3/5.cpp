@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 在无序顺序表中删除[s,t]之间的元素
+ * @Description: 在无序顺序表中删除[s,t]之间的元素
  * @Author: Leo
  * @Date: 2021-08-13 21:35:33
  * @LastEditTime: 2021-08-13 21:39:46

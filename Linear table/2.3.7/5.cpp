@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 将单链表就地逆置（空间复杂度为O(1)）
+ * @Description: 将单链表就地逆置（空间复杂度为O(1)）
  * @Author: Leo
  * @Date: 2021-08-16 21:13:13
  * @LastEditTime: 2021-08-17 20:01:58

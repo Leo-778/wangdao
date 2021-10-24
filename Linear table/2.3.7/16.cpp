@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 判断单链表B是否是A的连续子序列
+ * @Description: 判断单链表B是否是A的连续子序列
  * @Author: Leo
  * @Date: 2021-08-18 21:20:54
  * @LastEditTime: 2021-08-18 21:29:51

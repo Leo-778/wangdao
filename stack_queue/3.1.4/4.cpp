@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 判断单链表是否中心对称
+ * @Description: 判断单链表是否中心对称
  * @Author: Leo
  * @Date: 2021-08-20 21:04:43
  * @LastEditTime: 2021-08-20 21:10:31

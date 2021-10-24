@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 自下而上、从左到右的层次遍历
+ * @Description: 自下而上、从左到右的层次遍历
  * @Author: Leo
  * @Date: 2021-08-30 20:46:36
  * @LastEditTime: 2021-08-30 21:11:35

@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 带头节点的单链表删除所有值为x的元素
+ * @Description: 带头节点的单链表删除所有值为x的元素
  * @Author: Leo
  * @Date: 2021-08-16 20:38:28
  * @LastEditTime: 2021-08-16 20:40:23

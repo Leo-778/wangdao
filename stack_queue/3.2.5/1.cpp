@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 队列基本操作
+ * @Description: 队列基本操作
  * @Author: Leo
  * @Date: 2021-08-21 20:41:13
  * @LastEditTime: 2021-08-22 20:56:40

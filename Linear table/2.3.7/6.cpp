@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 带头结点单链表,排序,递增
+ * @Description: 带头结点单链表,排序,递增
  * @Author: Leo
  * @Date: 2021-08-17 20:02:27
  * @LastEditTime: 2021-08-17 20:18:52

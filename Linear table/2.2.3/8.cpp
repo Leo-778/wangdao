@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 将数组A[m+n]的前m和后n项置换（将1~m,1~n换为1~n,1~m）
+ * @Description: 将数组A[m+n]的前m和后n项置换（将1~m,1~n换为1~n,1~m）
  * @Author: Leo
  * @Date: 2021-08-14 20:34:25
  * @LastEditTime: 2021-08-14 21:07:25

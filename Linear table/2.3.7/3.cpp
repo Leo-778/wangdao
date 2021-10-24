@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 单链表从未到头反向输出所有结点的值。
+ * @Description: 单链表从未到头反向输出所有结点的值。
  * @Author: Leo
  * @Date: 2021-08-16 20:44:22
  * @LastEditTime: 2021-08-16 20:58:45

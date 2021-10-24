@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 找出主元素
+ * @Description: 找出主元素
  * @Author: Leo
  * @Date: 2021-08-15 20:09:45
  * @LastEditTime: 2021-08-15 20:31:29

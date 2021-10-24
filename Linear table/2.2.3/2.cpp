@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 将顺序表所有元素逆置
+ * @Description: 将顺序表所有元素逆置
  * @Author: Leo
  * @Date: 2021-08-13 20:38:34
  */

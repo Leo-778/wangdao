@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 将一维数组n个元素循环左移p个位置
+ * @Description: 将一维数组n个元素循环左移p个位置
  * @Author: Leo
  * @Date: 2021-08-14 21:23:23
  * @LastEditTime: 2021-08-14 21:29:18

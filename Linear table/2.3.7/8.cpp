@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 找出两个单链表的公共结点
+ * @Description: 找出两个单链表的公共结点
  * @Author: Leo
  * @Date: 2021-08-17 20:27:02
  * @LastEditTime: 2021-08-17 20:49:36

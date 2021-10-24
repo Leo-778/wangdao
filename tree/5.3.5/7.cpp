@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 判断二叉树是否是完全二叉树
+ * @Description: 判断二叉树是否是完全二叉树
  * @Author: Leo
  * @Date: 2021-08-30 21:22:36
  * @LastEditTime: 2021-08-30 21:27:40

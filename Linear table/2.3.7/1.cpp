@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 删除不带头结点的单链表l中所有值为x的元素(递归实现)
+ * @Description: 删除不带头结点的单链表l中所有值为x的元素(递归实现)
  * @Author: Leo
  * @Date: 2021-08-15 21:11:35
  * @LastEditTime: 2021-10-20 21:02:01

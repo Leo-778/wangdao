@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 并查集操作
+ * @Description: 并查集操作
  * @Author: Leo
  * @Date: 2021-08-29 20:59:32
  * @LastEditTime: 2021-08-29 21:39:05
